@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/student-management-service/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/student-management-service/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/student-management-service",
+  "projects": {
+    "student-payment-service": {
+      "type": "application",
+      "root": "apps/student-payment-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/student-payment-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/student-payment-service/tsconfig.app.json"
+      }
+    },
+    "student-management-service": {
+      "type": "application",
+      "root": "apps/student-management-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/student-management-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/student-management-service/tsconfig.app.json"
+      }
+    },
+    "shared": {
+      "type": "library",
+      "root": "libs/shared",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared/tsconfig.lib.json"
+      }
+    },
+    "course-management-service": {
+      "type": "application",
+      "root": "apps/course-management-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/course-management-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/course-management-service/tsconfig.app.json"
+      }
+    },
+    "course-registration-service": {
+      "type": "application",
+      "root": "apps/course-registration-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/course-registration-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/course-registration-service/tsconfig.app.json"
+      }
+    },
+    "api-gateway": {
+      "type": "application",
+      "root": "apps/api-gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/api-gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api-gateway/tsconfig.app.json"
+      }
+    }
+  }
+}
